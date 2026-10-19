@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/game/:path*",
-      "destination": "https://playtreehouse.com*"
+      "source": "/(.*)",
+      "destination": "https://playtreehouse.com"
     }
   ],
   "headers": [
@@ -10,7 +10,8 @@
       "source": "/(.*)",
       "headers": [
         { "key": "X-Frame-Options", "value": "ALLOWALL" },
-        { "key": "Content-Security-Policy", "value": "frame-ancestors 'self' https://google.com https://*.googleusercontent.com" }
+        { "key": "Content-Security-Policy", "value": "frame-ancestors 'self' https://google.com https://*.googleusercontent.com" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
     }
   ]
